@@ -34,8 +34,31 @@ void Student::SetStudyYear(int year) {
     this->study_year = year;
 }
 
+//change name
+void Student::SetName(const char* name) {
+    delete[] this->name;
+    this->name = new char[strlen(name) + 1];
+    strcpy(this->name, name);
+}
+
+// Move Constructor
+Student::Student(Student&& move) {
+	
+    this->name = move.name;
+    this->faculty = move.faculty;
+    this->study_year = move.study_year;
+    
+    move.name = nullptr;
+    move.faculty = nullptr;
+    move.study_year = 0;
+    std::cout << "I am move constructor." << std::endl;
+}
+
 void Student::PrintStudentInfo(){
-    std::cout << "Name: " << this->name << ", Faculty: " << this->faculty << ", Study year: "<< this->study_year << std::endl;
+    if(this->name != NULL) 
+    	std::cout << "Name: " << this->name << ", Faculty: " << this->faculty << ", Study year: "<< this->study_year << std::endl;
+    else
+    	std::cout << "NULL" <<std::endl;
 }
 
 

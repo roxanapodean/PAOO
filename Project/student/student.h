@@ -4,14 +4,14 @@ class Student {
 	public:
 	    // Constructor
 	    Student(const char* name, const char *faculty, int study_year);
-
 	    // Destructor
 	    ~Student();
-	    
- 	    Student(const Student& copy);
-	    void SetStudyYear(int year); 	
-	   
+	    //Copy Constructor
+ 	    Student(const Student& copy); 	    
+	    void SetStudyYear(int year); 	   
 	    void PrintStudentInfo();
+	    void SetName(const char* name); 
+	    Student(Student&& move); 
 
 	private:
 	    char* name;
