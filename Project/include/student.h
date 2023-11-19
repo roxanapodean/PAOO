@@ -1,14 +1,29 @@
 #pragma once
+#include "person.h"
 
-class Student {
-	public:
-	    // Funcție pur virtuală pentru afișarea informațiilor
-	    virtual void PrintStudentInfo() const = 0;
+using namespace pers;
 
-	    // Funcție pur virtuală 
-	    virtual void SetStudyYear(int year) = 0; 
-	    
-	    //Functie pur virtuala
-	    virtual void SetName(const char* name) = 0; 
-	
-};
+namespace stud{
+
+	class Student : public Person{
+		public:
+		    // Constructor
+		    Student(const char* name, const char *specializare, int study_year);
+		    // Destructor
+		    ~Student();
+		    //Copy Constructor
+	 	    Student(const Student& copy); 	    
+		    Student(Student&& move); 
+		    Student& operator=(const Student& other);
+		    Student& operator=(Student&& move) noexcept;
+		    void SetStudyYear(int year) override; 	   
+		    virtual void PrintStudentInfo() const;
+		    void SetName(const char* name) override; 
+
+		
+		    char* name;
+		    char* specializare;
+		    int study_year;
+	};
+
+}

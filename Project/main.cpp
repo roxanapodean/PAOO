@@ -3,7 +3,10 @@
 #include "student_licenta.h"
 #include "student_master.h"
 
-using namespace University;
+using namespace studL;
+using namespace studM;
+using namespace stud;
+
 
 int main() {
     StudentLicenta student1("Podean Roxana-Andreea", "AC", 4);
