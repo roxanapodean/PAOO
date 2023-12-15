@@ -8,7 +8,7 @@ using namespace stud;
 
 // Constructor
 StudentLicenta::StudentLicenta(const char* name, const char *specializare, int study_year):Student(name, specializare, study_year){
-    std::cout << "StudentLicenta has been registered." << std::endl;
+    //std::cout << "StudentLicenta has been registered." << std::endl;
 }
 
 

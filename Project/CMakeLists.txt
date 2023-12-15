@@ -14,6 +14,7 @@ add_subdirectory(lib)
 add_executable(Main main.cpp)
 
 target_link_libraries(Main PUBLIC student)
+target_link_libraries(Main PUBLIC pthread)
 
 target_include_directories(Main PUBLIC "${PROJECT_SOURCE_DIR}/include")
 
